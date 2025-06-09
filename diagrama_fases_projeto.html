@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases do Projeto E-commerce Imersivo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .phase {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .phase-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .phase-number {
+            background-color: #3498db;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .phase-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .step {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            flex: 1 1 200px;
+            position: relative;
+        }
+        .step:after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #7f8c8d;
+        }
+        .step:last-child:after {
+            display: none;
+        }
+        .phase-1 { background-color: #f9d5e5; }
+        .phase-2 { background-color: #eeeeee; }
+        .phase-3 { background-color: #d6eaf8; }
+        .phase-4 { background-color: #fdebd0; }
+        .phase-5 { background-color: #d5f5e3; }
+        .phase-6 { background-color: #e8daef; }
+        .phase-7 { background-color: #f8f9d9; }
+        .phase-8 { background-color: #e5e8e8; }
+        
+        .diagram-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .note {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .phase-content {
+                flex-direction: column;
+            }
+            .step:after {
+                content: "↓";
+                right: 50%;
+                bottom: -15px;
+                top: auto;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Fases do Projeto E-commerce Imersivo</h1>
+    
+    <div class="phase phase-1">
+        <div class="phase-title">
+            <div class="phase-number">1</div>
+            <h2>Concepção e Ideação</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Brainstorming de Ideias</h3>
+                <p>Geração de ideias para projetos de portfólio com foco em tecnologias modernas e experiências inovadoras.</p>
+            </div>
+            <div class="step">
+                <h3>Seleção do Projeto</h3>
+                <p>Escolha do E-commerce Imersivo como projeto ideal para demonstrar habilidades técnicas e criativas.</p>
+            </div>
+            <div class="step">
+                <h3>Definição de Requisitos</h3>
+                <p>Estabelecimento das funcionalidades essenciais: visualização 3D, personalização de produtos, checkout otimizado e recomendações.</p>
+            </div>
+            <div class="step">
+                <h3>Pesquisa de Tecnologias</h3>
+                <p>Investigação das melhores tecnologias para implementar a experiência imersiva e funcionalidades planejadas.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-2">
+        <div class="phase-title">
+            <div class="phase-number">2</div>
+            <h2>Planejamento do Frontend</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Definição da Arquitetura</h3>
+                <p>Estruturação da arquitetura baseada em componentes React com gerenciamento de estado via Context API.</p>
+            </div>
+            <div class="step">
+                <h3>Escolha de Tecnologias</h3>
+                <p>Seleção de React, Three.js para visualização 3D, e styled-components para estilização.</p>
+            </div>
+            <div class="step">
+                <h3>Design da Interface</h3>
+                <p>Criação de wireframes e definição do sistema de design para garantir uma experiência consistente.</p>
+            </div>
+            <div class="step">
+                <h3>Planejamento da Experiência</h3>
+                <p>Definição dos fluxos de interação com produtos 3D e personalização em tempo real.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-3">
+        <div class="phase-title">
+            <div class="phase-number">3</div>
+            <h2>Desenvolvimento do Frontend</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Configuração do Ambiente</h3>
+                <p>Setup do projeto React com dependências necessárias e estrutura de pastas organizada.</p>
+            </div>
+            <div class="step">
+                <h3>Componentes Base</h3>
+                <p>Implementação de componentes reutilizáveis como botões, cards, layouts e formulários.</p>
+            </div>
+            <div class="step">
+                <h3>Visualização 3D</h3>
+                <p>Desenvolvimento do visualizador 3D com Three.js para interação com modelos de produtos.</p>
+            </div>
+            <div class="step">
+                <h3>Sistema de Personalização</h3>
+                <p>Criação do sistema para customizar cores, materiais e componentes dos produtos.</p>
+            </div>
+            <div class="step">
+                <h3>Páginas e Rotas</h3>
+                <p>Implementação das principais páginas e configuração do sistema de navegação.</p>
+            </div>
+            <div class="step">
+                <h3>Contextos e Estado</h3>
+                <p>Desenvolvimento dos contextos para gerenciar carrinho, produtos, usuário e tema.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-4">
+        <div class="phase-title">
+            <div class="phase-number">4</div>
+            <h2>Correções e Melhorias do Frontend</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Bugs de Renderização</h3>
+                <p>Correção de problemas na renderização de componentes e modelos 3D.</p>
+            </div>
+            <div class="step">
+                <h3>Otimização de Performance</h3>
+                <p>Melhorias no carregamento e renderização para garantir uma experiência fluida.</p>
+            </div>
+            <div class="step">
+                <h3>Experiência do Usuário</h3>
+                <p>Refinamentos na interface e interações para melhorar a usabilidade.</p>
+            </div>
+            <div class="step">
+                <h3>Problemas de Tema</h3>
+                <p>Correção de inconsistências no sistema de tema e estilização.</p>
+            </div>
+            <div class="step">
+                <h3>Funcionalidade de Pesquisa</h3>
+                <p>Aprimoramento do sistema de busca e filtragem de produtos.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-5">
+        <div class="phase-title">
+            <div class="phase-number">5</div>
+            <h2>Planejamento do Backend</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Definição da Arquitetura</h3>
+                <p>Estruturação da arquitetura RESTful com separação clara de responsabilidades.</p>
+            </div>
+            <div class="step">
+                <h3>Escolha de Tecnologias</h3>
+                <p>Seleção de Node.js, Express, MongoDB e JWT para autenticação.</p>
+            </div>
+            <div class="step">
+                <h3>Modelo de Dados</h3>
+                <p>Design dos esquemas de dados para produtos, usuários, carrinho e pedidos.</p>
+            </div>
+            <div class="step">
+                <h3>Planejamento de Endpoints</h3>
+                <p>Definição dos endpoints da API e suas funcionalidades específicas.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-6">
+        <div class="phase-title">
+            <div class="phase-number">6</div>
+            <h2>Desenvolvimento do Backend</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Configuração do Ambiente</h3>
+                <p>Setup do projeto Node.js com Express e conexão ao MongoDB.</p>
+            </div>
+            <div class="step">
+                <h3>Modelos de Dados</h3>
+                <p>Implementação dos esquemas e modelos usando Mongoose.</p>
+            </div>
+            <div class="step">
+                <h3>Endpoints de Produtos</h3>
+                <p>Desenvolvimento das rotas para listagem, busca e detalhes de produtos.</p>
+            </div>
+            <div class="step">
+                <h3>Autenticação e Usuários</h3>
+                <p>Implementação do sistema de registro, login e gerenciamento de perfil.</p>
+            </div>
+            <div class="step">
+                <h3>Endpoints de Carrinho</h3>
+                <p>Desenvolvimento das rotas para gerenciamento do carrinho de compras.</p>
+            </div>
+            <div class="step">
+                <h3>Endpoints de Pedidos</h3>
+                <p>Implementação do fluxo de criação e acompanhamento de pedidos.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-7">
+        <div class="phase-title">
+            <div class="phase-number">7</div>
+            <h2>Documentação e Testes</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Documentação da API</h3>
+                <p>Criação da documentação Swagger detalhando todos os endpoints.</p>
+            </div>
+            <div class="step">
+                <h3>Guias de Uso</h3>
+                <p>Elaboração de guias para instalação, configuração e uso da API.</p>
+            </div>
+            <div class="step">
+                <h3>Testes de Integração</h3>
+                <p>Implementação de testes para validar o funcionamento dos endpoints.</p>
+            </div>
+            <div class="step">
+                <h3>Validação de Fluxos</h3>
+                <p>Testes dos fluxos completos de compra, personalização e pedidos.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="phase phase-8">
+        <div class="phase-title">
+            <div class="phase-number">8</div>
+            <h2>Integração e Entrega</h2>
+        </div>
+        <div class="phase-content">
+            <div class="step">
+                <h3>Preparação para Integração</h3>
+                <p>Ajustes finais para garantir compatibilidade entre frontend e backend.</p>
+            </div>
+            <div class="step">
+                <h3>Empacotamento do Código</h3>
+                <p>Organização e compactação dos arquivos para entrega.</p>
+            </div>
+            <div class="step">
+                <h3>Documentação Final</h3>
+                <p>Compilação de toda a documentação e diagramas do projeto.</p>
+            </div>
+            <div class="step">
+                <h3>Entrega do Projeto</h3>
+                <p>Entrega final do código, documentação e instruções de uso.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="note">
+        <p><strong>Nota:</strong> Este diagrama representa as principais fases do desenvolvimento do projeto E-commerce Imersivo, desde a concepção inicial até a implementação completa do backend. Cada fase foi cuidadosamente planejada e executada para garantir um produto final de alta qualidade e com todas as funcionalidades necessárias para uma experiência de compra imersiva.</p>
+    </div>
+</body>
+</html>

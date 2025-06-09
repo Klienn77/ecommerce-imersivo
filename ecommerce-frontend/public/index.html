@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#3498db" />
+  <meta
+    name="description"
+    content="E-commerce com Experiência Imersiva - Visualização 3D e personalização em tempo real"
+  />
+  <title>E-commerce Imersivo</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  
+  <!-- Manifesto para PWA -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- Estilos adicionais (opcional) -->
+  <style>
+    /* Estilos para a tela de carregamento inicial */
+    .loading-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f5f7fa;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loading-text {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <!-- Aviso para usuários sem JavaScript -->
+  <noscript>
+    <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+      Você precisa habilitar o JavaScript para executar esta aplicação.
+    </div>
+  </noscript>
+  
+  <!-- Elemento raiz onde o React renderizará a aplicação -->
+  <div id="root">
+    <!-- Tela de carregamento que será exibida enquanto o React inicializa -->
+    <div class="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Carregando experiência imersiva...</div>
+    </div>
+  </div>
+  
+  <!-- 
+    Este arquivo HTML é um template.
+    Se você abri-lo diretamente no navegador, verá uma página em branco.
+    
+    Você pode adicionar webfonts, meta tags ou analytics ao arquivo.
+    O passo de build colocará os scripts empacotados na tag <body>.
+    
+    Para começar o desenvolvimento, execute `npm start` ou `yarn start`.
+    Para criar uma versão de produção, use `npm run build` ou `yarn build`.
+  -->
+</body>
+</html>
