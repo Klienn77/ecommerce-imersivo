@@ -278,7 +278,7 @@ const productData = [
     discount: 22,
     rating: 4.9,
     reviews: 128,
-    category: "accessories,", 
+    category: "accessories", 
     brand: "HydraTech",
     colors: ["black", "blue", "red", "silver"],
     tags: ["accessories", "hydration", "sports"],
