@@ -15,7 +15,7 @@ const productData = [
     discount: 14,
     rating: 4.8,
     reviews: 124,
-    category: "Running",
+    category: "Corrida",
     brand: "SportMax",
     colors: ["blue", "black", "red"],
     sizes: [38, 39, 40, 41, 42, 43, 44],
