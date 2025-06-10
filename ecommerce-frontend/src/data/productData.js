@@ -328,7 +328,39 @@ const productData = [
       sizes: ["small (18L)", "medium (25L)", "large (35L)"],
       features: ["standard", "hydration", "travel"]
     }
-  }
+  },
+  {
+    id: 11,
+    name: "Tênis de Corrida Performance",
+    price: 299.99,
+    originalPrice: 349.99,
+    discount: 14,
+    rating: 4.8,
+    reviews: 124,
+    category: "Corrida",
+    brand: "Mizuno",
+    colors: ["blue", "black", "red"],
+    sizes: [38, 39, 40, 41, 42, 43, 44],
+    tags: ["running", "sports", "performance"],
+    description: "Tênis de corrida de alta performance com tecnologia de amortecimento avançada e suporte para longas distâncias. Material respirável e leve para máximo conforto.",
+    features: [
+      "Tecnologia de amortecimento MaxCushion",
+      "Malha respirável de alta durabilidade",
+      "Solado com borracha de carbono para maior tração",
+      "Peso: 280g (tamanho 42)",
+      "Drop: 8mm"
+    ],
+    images: [
+      "/assets/images/products/corrida-11.webp",
+     
+    ],
+    modelPath: "/assets/models/running_shoe.glb",
+    customizableOptions: {
+      colors: ["blue", "black", "red", "white", "green"],
+      materials: ["mesh", "synthetic", "knit"],
+      soleTypes: ["regular", "trail", "competition"]
+    }
+  },
 ];
 
 export default productData;
