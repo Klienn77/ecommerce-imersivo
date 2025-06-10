@@ -314,13 +314,13 @@ const RemoveIcon = () => (
 const PaymentIcon = ({ type }) => {
   switch (type) {
     case 'visa':
-      return <PaymentIconImage src="/assets/images/payment/visa.svg" alt="Visa" />;
+      return <PaymentIconImage src="/assets/images/payment/visa.png" alt="Visa" />;
     case 'mastercard':
-      return <PaymentIconImage src="/assets/images/payment/mastercard.svg" alt="Mastercard" />;
+      return <PaymentIconImage src="/assets/images/payment/mastercard.png" alt="Mastercard" />;
     case 'amex':
-      return <PaymentIconImage src="/assets/images/payment/amex.svg" alt="American Express" />;
+      return <PaymentIconImage src="/assets/images/payment/amex.png" alt="American Express" />;
     case 'pix':
-      return <PaymentIconImage src="/assets/images/payment/pix.svg" alt="PIX" />;
+      return <PaymentIconImage src="/assets/images/payment/pix.png" alt="PIX" />;
     default:
       return null;
   }

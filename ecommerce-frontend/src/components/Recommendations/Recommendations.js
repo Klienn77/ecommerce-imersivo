@@ -325,7 +325,7 @@ const SAMPLE_PRODUCTS = [
     category: 'shoes',
     price: 299.99,
     popularity: 9.2,
-    image: '/assets/images/shoe1.jpg'
+    image: '/assets/images/products/esportivo.jpeg'
   },
   {
     id: 2,
@@ -333,7 +333,7 @@ const SAMPLE_PRODUCTS = [
     category: 'shoes',
     price: 259.99,
     popularity: 8.7,
-    image: '/assets/images/shoe2.jpg'
+    image: '/assets/images/products/shoes-1-1.jpg'
   },
   {
     id: 3,
@@ -341,7 +341,7 @@ const SAMPLE_PRODUCTS = [
     category: 'accessories',
     price: 49.99,
     popularity: 7.5,
-    image: '/assets/images/socks.jpg'
+    image: '/assets/images/products/meias.jpeg'
   },
   {
     id: 4,
@@ -349,7 +349,7 @@ const SAMPLE_PRODUCTS = [
     category: 'clothing',
     price: 89.99,
     popularity: 8.9,
-    image: '/assets/images/tshirt.jpg'
+    image: '/assets/images/products/camiseta-1.jpeg'
   },
   {
     id: 5,
@@ -357,7 +357,7 @@ const SAMPLE_PRODUCTS = [
     category: 'clothing',
     price: 79.99,
     popularity: 8.3,
-    image: '/assets/images/shorts.jpg'
+    image: '/assets/images/products/shorts.jpeg'
   },
   {
     id: 6,
@@ -365,7 +365,7 @@ const SAMPLE_PRODUCTS = [
     category: 'accessories',
     price: 59.99,
     popularity: 7.8,
-    image: '/assets/images/cap.jpg'
+    image: '/assets/images/products/bone.jpeg'
   },
   {
     id: 7,
@@ -373,7 +373,7 @@ const SAMPLE_PRODUCTS = [
     category: 'accessories',
     price: 129.99,
     popularity: 8.1,
-    image: '/assets/images/backpack.jpg'
+    image: '/assets/images/products/mochila-1.jpeg'
   },
   {
     id: 8,
@@ -381,7 +381,7 @@ const SAMPLE_PRODUCTS = [
     category: 'clothing',
     price: 199.99,
     popularity: 8.6,
-    image: '/assets/images/jacket.jpg'
+    image: '/assets/images/products/corta-vento.jpeg'
   }
 ];
 
