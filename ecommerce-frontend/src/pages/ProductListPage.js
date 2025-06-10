@@ -40,6 +40,9 @@ const ProductListPage = () => {
   const [productsPerPage] = useState(12);
   const [totalProducts, setTotalProducts] = useState(0);
 
+  // Definindo o range de preço com base nos produtos disponíveis
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
+
   const [activeFilters, setActiveFilters] = useState({
     price: { min: 0, max: 1000 },
     colors: [],
@@ -48,6 +51,23 @@ const ProductListPage = () => {
   });
   const [sortBy, setSortBy] = useState('popular');
   const [viewMode, setViewMode] = useState('grid');
+
+  // Atualizar o range de preço com base nos produtos disponíveis
+  useEffect(() => {
+    if (products.length > 0) {
+      const prices = products.map(product => product.price);
+      const minPrice = Math.floor(Math.min(...prices));
+      const maxPrice = Math.ceil(Math.max(...prices));
+      
+      setPriceRange({ min: minPrice, max: maxPrice });
+      
+      // Atualizar também o filtro ativo para usar o range completo por padrão
+      setActiveFilters(prev => ({
+        ...prev,
+        price: { min: minPrice, max: maxPrice }
+      }));
+    }
+  }, [products]);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -105,10 +125,17 @@ const ProductListPage = () => {
 
   const applyFilters = (products, filters) => {
     return products.filter(product => {
+      // Verificar se o produto tem preço definido
+      if (!product.price) return false;
+      
+      // Verificar se o preço está dentro do range selecionado
       if (product.price < filters.price.min || product.price > filters.price.max) return false;
-      if (filters.colors.length > 0 && !filters.colors.some(color => product.colors.includes(color))) return false;
-      if (filters.sizes.length > 0 && !filters.sizes.some(size => product.sizes.includes(size))) return false;
+      
+      // Outros filtros
+      if (filters.colors.length > 0 && !filters.colors.some(color => product.colors && product.colors.includes(color))) return false;
+      if (filters.sizes.length > 0 && !filters.sizes.some(size => product.sizes && product.sizes.includes(size))) return false;
       if (filters.brands.length > 0 && !filters.brands.includes(product.brand)) return false;
+      
       return true;
     });
   };
@@ -138,6 +165,16 @@ const ProductListPage = () => {
     setCurrentPage(1);
   };
 
+  const handleResetFilters = () => {
+    setActiveFilters({
+      price: { min: priceRange.min, max: priceRange.max },
+      colors: [],
+      sizes: [],
+      brands: []
+    });
+    setCurrentPage(1);
+  };
+
   const handleSortChange = (option) => {
     setSortBy(option);
   };
@@ -159,6 +196,23 @@ const ProductListPage = () => {
     return 'Todos os Produtos';
   };
 
+  // Extrair cores e marcas disponíveis para o filtro
+  const availableColors = [
+    { id: 'black', name: 'Preto', value: '#000000' },
+    { id: 'white', name: 'Branco', value: '#FFFFFF' },
+    { id: 'red', name: 'Vermelho', value: '#FF0000' },
+    { id: 'blue', name: 'Azul', value: '#0000FF' },
+    { id: 'green', name: 'Verde', value: '#00FF00' },
+    { id: 'yellow', name: 'Amarelo', value: '#FFFF00' }
+  ];
+  
+  const availableBrands = [
+    { id: 'nike', name: 'Nike' },
+    { id: 'adidas', name: 'Adidas' },
+    { id: 'puma', name: 'Puma' },
+    { id: 'reebok', name: 'Reebok' }
+  ];
+
   return (
     <main>
       <Section>
@@ -171,7 +225,15 @@ const ProductListPage = () => {
           </PageHeader>
 
           <ProductListContainer>
-            <FilterSidebar filters={activeFilters} onFilterChange={handleFilterChange} isLoading={isLoading} />
+            <FilterSidebar 
+              filters={activeFilters}
+              priceRange={priceRange}
+              colors={availableColors}
+              brands={availableBrands}
+              onApplyFilters={handleFilterChange}
+              onResetFilters={handleResetFilters}
+              isLoading={isLoading} 
+            />
             <ProductListContent>
               <ListControls>
                 <SortControls>
@@ -214,7 +276,7 @@ const ProductListPage = () => {
                   <h3>Nenhum produto encontrado</h3>
                   <p>Tente ajustar seus filtros ou buscar por outro termo.</p>
                   <Button onClick={() => {
-                    setActiveFilters({ price: { min: 0, max: 1000 }, colors: [], sizes: [], brands: [] });
+                    handleResetFilters();
                     navigate('/products');
                   }}>
                     Ver Todos os Produtos
