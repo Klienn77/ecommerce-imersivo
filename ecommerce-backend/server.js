@@ -17,6 +17,8 @@ const productRoutes = require('./src/routes/productRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const cartRoutes = require('./src/routes/cartRoutes');
 const orderRoutes = require('./src/routes/orderRoutes');
+const logRoutes = require('./src/routes/logRoutes');
+const statsRoutes = require('./src/routes/statsRoutes');
 
 // Configuração do app
 const app = express();
@@ -59,10 +61,25 @@ app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/logs', logRoutes);
+app.use('/api/stats', statsRoutes);
 
 // Rota raiz
 app.get('/', (req, res) => {
-  res.send('API do E-commerce Imersivo está funcionando!');
+  res.json({
+    message: 'API do Sistema de Pós-Vendas',
+    version: '1.0.0',
+    status: 'online',
+    endpoints: {
+      products: '/api/products',
+      users: '/api/users',
+      cart: '/api/cart',
+      orders: '/api/orders',
+      logs: '/api/logs',
+      stats: '/api/stats',
+      documentation: '/api-docs'
+    }
+  });
 });
 
 // Middleware de tratamento de erros
