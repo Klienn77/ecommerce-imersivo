@@ -492,4 +492,7 @@ const addToCartResponse = await fetch('http://localhost:5000/api/cart', {
 });
 
 const cartData = await addToCartResponse.json();
+
+
+##email : fabianompedroso@hotmail.com
 ```
