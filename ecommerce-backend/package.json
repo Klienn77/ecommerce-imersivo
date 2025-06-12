@@ -16,7 +16,7 @@
     "imersivo",
     "backend"
   ],
-  "author": "Manus AI",
+  
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
